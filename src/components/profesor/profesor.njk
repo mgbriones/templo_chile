@@ -1,0 +1,23 @@
+{#
+  PROFESOR — presentación del profesor (#profesor).
+  Foto, nombre, una píldora por cada logro (cinturones, MMA) y su biografía.
+  Textos: textos.yml > profesor.
+-#}
+{%- set p = textos.profesor -%}
+<section id="profesor" class="seccion seccion--oscura">
+  <div class="contenedor profesor">
+    <div class="profesor__foto">
+      <img src="{{ p.foto }}" alt="{{ p.foto_alt }}">
+    </div>
+    <div class="profesor__texto">
+      <span class="antetitulo">{{ p.antetitulo }}</span>
+      <h2 class="titulo-seccion">{{ p.nombre }}</h2>
+      <div class="profesor__logros">
+        {%- for logro in p.logros %}
+        <span class="profesor__logro">{{ logro }}</span>
+        {%- endfor %}
+      </div>
+      <p class="profesor__bio">{{ p.bio }}</p>
+    </div>
+  </div>
+</section>

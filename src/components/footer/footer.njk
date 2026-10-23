@@ -1,0 +1,20 @@
+{#
+  FOOTER — pie de página.
+  Marca, sedes y teléfono de contacto; abajo, los derechos y el crédito de
+  desarrollo con enlace a LinkedIn.
+  Textos: textos.yml > footer.
+-#}
+{%- set f = textos.footer -%}
+<footer class="footer">
+  <div class="contenedor footer__principal">
+    <span class="footer__marca">{{ f.marca }}</span>
+    <span>{{ f.ubicacion }}</span>
+    <span>{{ f.contacto }}</span>
+  </div>
+  <div class="footer__legal">
+    <div class="contenedor footer__legal-contenido">
+      <span>{{ f.derechos }}</span>
+      <span>{{ f.credito_antes }}<a class="footer__credito" href="{{ f.credito_url }}" target="_blank" rel="noopener">{{ f.credito_nombre }}</a></span>
+    </div>
+  </div>
+</footer>

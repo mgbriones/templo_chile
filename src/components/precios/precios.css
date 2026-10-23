@@ -1,0 +1,19 @@
+.precios { display: flex; flex-direction: column; gap: 40px; }
+.precios__planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; }
+
+.precios__plan { border-radius: 6px; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+.precios__plan--destacado { background: var(--color-blanco); color: var(--color-negro); }
+.precios__plan--normal { border: 1px solid var(--gris-750); }
+.precios__plan--prueba { border: 2px dashed var(--color-blanco); }
+
+.precios__etiqueta { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--gris-400); }
+.precios__plan--destacado .precios__etiqueta { color: var(--color-acento); }
+.precios__nombre { font-family: var(--fuente-titulo); font-size: 22px; font-weight: 600; text-transform: uppercase; }
+.precios__precio { font-family: var(--fuente-titulo); font-size: 48px; font-weight: 700; line-height: 1; }
+.precios__unidad { color: var(--gris-400); font-size: 14px; }
+.precios__plan--destacado .precios__unidad { color: var(--gris-700); }
+
+.precios__boton { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; background: var(--color-blanco); color: var(--color-negro); text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 4px; }
+.precios__boton:hover { filter: brightness(1.12); }
+
+.precios__notas { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--gris-400); line-height: 1.5; }

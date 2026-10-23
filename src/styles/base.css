@@ -1,0 +1,30 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-blanco); color: var(--color-texto); font-family: var(--fuente-texto); }
+[hidden] { display: none !important; }
+
+/* Estructura de secciones */
+.contenedor { max-width: var(--ancho-contenido); margin: 0 auto; }
+.seccion { scroll-margin-top: 110px; padding: 96px 20px; }
+.seccion--oscura { background: var(--color-negro); color: var(--color-blanco); }
+
+.encabezado-seccion { display: flex; flex-direction: column; gap: 10px; }
+.antetitulo { font-family: var(--fuente-marca); font-size: 11px; letter-spacing: 3px; color: var(--gris-700); }
+.seccion--oscura .antetitulo { color: var(--gris-400); }
+.titulo-seccion { margin: 0; font-family: var(--fuente-titulo); font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.5rem); text-transform: uppercase; line-height: 1; }
+
+/* Botones grandes */
+.boton { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; text-decoration: none; font-family: var(--fuente-titulo); font-weight: 600; font-size: 18px; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; box-sizing: border-box; }
+.boton--claro { background: var(--color-blanco); color: var(--color-negro); }
+.boton--acento { background: var(--color-acento); color: var(--color-blanco); }
+.boton--claro:hover, .boton--acento:hover { filter: brightness(1.12); }
+.boton--borde { border: 2px solid var(--color-blanco); color: var(--color-blanco); }
+.boton--borde:hover { background: var(--color-blanco); color: var(--color-negro); }
+
+/* Pestañas de sede (horarios y galería) */
+.pestanas { display: flex; padding: 4px; background: var(--gris-100); border-radius: 999px; gap: 4px; flex-wrap: wrap; }
+.pestana { min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; cursor: pointer; font-family: var(--fuente-titulo); font-weight: 600; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; background: transparent; color: var(--color-negro); }
+.pestanas--chicas .pestana { padding: 0 18px; font-size: 15px; }
+.pestana[aria-pressed="true"] { background: var(--color-negro); color: var(--color-blanco); }
+
+/* Ícono blanco dentro de un círculo negro */
+.icono-circulo { width: 44px; height: 44px; border-radius: 50%; background: var(--color-negro); color: var(--color-blanco); display: flex; align-items: center; justify-content: center; flex: none; }

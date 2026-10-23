@@ -1,0 +1,17 @@
+.galeria { display: flex; flex-direction: column; gap: 28px; }
+.galeria__encabezado { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.galeria__controles { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.galeria__flechas { display: flex; gap: 10px; }
+.galeria__flecha { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--color-negro); background: var(--color-blanco); color: var(--color-negro); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.galeria__flecha--siguiente { background: var(--color-negro); color: var(--color-blanco); }
+
+/* Carrusel: la pista se desplaza de a una foto (100%) */
+.galeria__visor { position: relative; overflow: hidden; border-radius: 6px; background: var(--color-negro); }
+.galeria__pista { display: flex; transition: transform 500ms ease; }
+.galeria__foto { flex: 0 0 100%; aspect-ratio: 16 / 10; max-height: 640px; }
+.galeria__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.galeria__puntos { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+.galeria__punto { width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; }
+.galeria__punto span { display: block; height: 6px; width: 10px; border-radius: 3px; background: var(--gris-350); transition: width 300ms ease; }
+.galeria__punto[aria-current="true"] span { width: 28px; background: var(--color-negro); }

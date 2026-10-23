@@ -1,0 +1,56 @@
+# Sedes: horario semanal y fotos de la galería.
+# En cada fila, "clases" asigna a cada día (lun..sab) una clase de textos.yml > horarios.clases.
+# "pos" es el encuadre de la foto (object-position).
+
+nunoa:
+  nombre: "Ñuñoa"
+  titulo: "Sede Templo Ñuñoa"
+  lugar: "Ñuñoa, Santiago"
+  mapa: "https://maps.app.goo.gl/mrYdjd1vUy4y8cA1A"
+  horario:
+    - inicio: "09:00"
+      fin: ""
+      clases: { lun: bjj, mie: bjj, vie: bjj }
+    - inicio: "16:00"
+      fin: "17:30"
+      clases: { sab: super }
+    - inicio: "17:30"
+      fin: "19:00"
+      clases: { sab: mma_iniciantes }
+    - inicio: "19:00"
+      fin: "20:00"
+      clases: { lun: mma, mie: mma, vie: mma }
+    - inicio: "20:00"
+      fin: "21:30"
+      clases: { lun: bjj_iniciantes, mie: bjj, vie: bjj }
+  fotos:
+    - { src: "img/equipo.jpg", alt: "Equipo de Templo Ñuñoa", pos: "center 45%" }
+    - { src: "img/guardia.jpg", alt: "Trabajo de guardia", pos: "center 60%" }
+    - { src: "img/graduacion.jpg", alt: "Graduación de faixa azul", pos: "center 35%" }
+    - { src: "img/azul.jpg", alt: "Técnica en el tatami", pos: "center 45%" }
+    - { src: "img/senseis.jpg", alt: "Profesores en seiza", pos: "center 40%" }
+    - { src: "img/control.jpg", alt: "Control y presión", pos: "center 45%" }
+    - { src: "img/templo.jpg", alt: "Rodando en Templo", pos: "center 50%" }
+
+militar:
+  nombre: "Escuela Militar"
+  titulo: "Sede Dmoov Escuela Militar"
+  lugar: "Escuela Militar, Las Condes"
+  mapa: "https://www.google.com/maps/search/?api=1&query=Dmoov+Escuela+Militar+Las+Condes"
+  horario:
+    - inicio: "07:00"
+      fin: "08:00"
+      clases: { mar: bjj, jue: bjj }
+    - inicio: "19:00"
+      fin: "20:00"
+      clases: { mar: mma, jue: mma }
+    - inicio: "20:00"
+      fin: "21:00"
+      clases: { mar: bjj, jue: bjj }
+  fotos:
+    - { src: "img/em1.jpg", alt: "Equipo en Dmoov Escuela Militar", pos: "center 55%" }
+    - { src: "img/em3.jpg", alt: "Grupo de alumnos en Escuela Militar", pos: "center 55%" }
+    - { src: "img/em5.jpg", alt: "Alumnos después de clase", pos: "center 40%" }
+    - { src: "img/em6.jpg", alt: "Equipo después del entrenamiento", pos: "center 45%" }
+    - { src: "img/em2.jpg", alt: "Profesores en Dmoov", pos: "center 8%" }
+    - { src: "img/em4.jpg", alt: "Compañeros de entrenamiento", pos: "center 35%" }

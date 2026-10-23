@@ -1,0 +1,52 @@
+.horarios { display: flex; flex-direction: column; gap: 32px; }
+.horarios__encabezado { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; }
+
+.horarios__tarjeta { border: 2px solid var(--color-negro); border-radius: 10px; padding: clamp(10px, 2.5vw, 28px); display: flex; flex-direction: column; gap: 16px; }
+.horarios__panel { display: flex; flex-direction: column; gap: 16px; }
+
+/* Datos de la sede y enlace al mapa */
+.horarios__sede { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 20px; padding-bottom: 16px; border-bottom: 1px solid var(--gris-200); }
+.horarios__sede-info { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.horarios__sede-textos { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.horarios__sede-titulo { margin: 0; font-family: var(--fuente-titulo); font-weight: 600; font-size: clamp(1.2rem, 3vw, 1.6rem); letter-spacing: 1px; text-transform: uppercase; }
+.horarios__sede-lugar { font-size: 14px; color: var(--gris-700); }
+.horarios__mapa { display: inline-flex; align-items: center; gap: 8px; padding: 3px 10px 3px 3px; min-height: 36px; border: 2px solid var(--color-negro); border-radius: 8px; background: var(--color-blanco); color: var(--color-negro); text-decoration: none; max-width: 100%; box-sizing: border-box; }
+.horarios__mapa-miniatura { flex: none; border-radius: 5px; display: block; }
+.horarios__mapa-flecha { flex: none; }
+.horarios__mapa-texto { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.horarios__mapa-texto span { font-family: var(--fuente-titulo); font-weight: 600; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1.1; white-space: nowrap; }
+
+/* Grilla semanal: columna de horas + lunes a sábado */
+.horarios__grilla { display: flex; flex-direction: column; gap: 8px; }
+.horarios__fila { display: grid; grid-template-columns: minmax(52px, 0.8fr) repeat(6, minmax(0, 1fr)); gap: 8px; }
+.horarios__dia { background: var(--color-negro); color: var(--color-blanco); border-radius: 999px; min-height: 40px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-align: center; }
+.horarios__hora { display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--fuente-titulo); font-weight: 600; font-size: 17px; line-height: 1.05; text-align: center; }
+.horarios__hora small { font-size: 12px; color: var(--gris-700); font-weight: 500; }
+.horarios__celda { min-height: 52px; border-radius: 999px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px 8px; font-size: 13px; font-weight: 700; line-height: 1.15; box-sizing: border-box; border: 2px solid; }
+.horarios__celda--bjj { background: var(--color-negro); color: var(--color-blanco); border-color: var(--color-negro); }
+.horarios__celda--mma { background: var(--color-blanco); color: var(--color-negro); border-color: var(--color-negro); }
+.horarios__celda--iniciantes { background: var(--gris-300); color: var(--color-negro); border-color: var(--gris-300); }
+.horarios__celda--super { background: var(--color-acento); color: var(--color-blanco); border-color: var(--color-acento); }
+.horarios__celda--vacia { background: var(--gris-100); color: var(--gris-100); border-color: var(--gris-100); }
+.horarios__corto { display: none; }
+
+/* Leyenda de colores */
+.horarios__leyenda { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 13px; color: var(--gris-800); padding-top: 8px; border-top: 1px solid var(--gris-200); }
+.horarios__leyenda-item { display: inline-flex; align-items: center; gap: 8px; }
+.horarios__muestra { width: 16px; height: 16px; border-radius: 50%; }
+.horarios__muestra--bjj { background: var(--color-negro); }
+.horarios__muestra--mma { background: var(--color-blanco); border: 2px solid var(--color-negro); box-sizing: border-box; }
+.horarios__muestra--iniciantes { background: var(--gris-300); }
+.horarios__muestra--super { background: var(--color-acento); }
+
+/* En celular la grilla usa nombres cortos y celdas más compactas */
+@media (max-width: 640px) {
+  .horarios__largo { display: none; }
+  .horarios__corto { display: inline; }
+  .horarios__grilla, .horarios__fila { gap: 4px; }
+  .horarios__celda { border-radius: 8px; font-size: 11px; min-height: 40px; padding: 2px; }
+  .horarios__hora { font-size: 13px; }
+  .horarios__hora small { font-size: 10px; }
+  .horarios__dia { font-size: 10px; letter-spacing: 0.5px; border-radius: 8px; }
+  .horarios__mapa-texto span { font-size: 13px; }
+}

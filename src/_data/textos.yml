@@ -1,0 +1,155 @@
+# Textos de la landing, ordenados por componente en el orden en que aparecen.
+
+sitio:
+  titulo: "Templo Jiu Jitsu Culture Chile"
+  descripcion: "Templo Jiu Jitsu Culture Chile: Jiu Jitsu Brasileño y MMA en Ñuñoa y Escuela Militar. Horarios, precios, convenio Wellhub y clase de prueba gratis."
+  imagen_compartir: "img/equipo.jpg"
+  logo: "img/logo.jpg"
+
+enlaces:
+  instagram_mensaje: "https://ig.me/m/templo_chile"
+  instagram_perfil: "https://www.instagram.com/templo_chile/"
+  wellhub: "https://wellhub.com/es-cl/search/partners/templo-jiu-jitsu-culture/"
+
+header:
+  marca: "TEMPLO"
+  submarca: "JIU JITSU CULTURE · CHILE"
+  nav_etiqueta: "Secciones"
+  nav:
+    - texto: "Horarios y sedes"
+      href: "#horarios"
+    - texto: "Precios"
+      href: "#precios"
+    - texto: "Profesor"
+      href: "#profesor"
+    - texto: "Convenio"
+      href: "#wellhub"
+    - texto: "Galería"
+      href: "#galeria"
+
+hero:
+  imagen: "img/equipo.jpg"
+  imagen_alt: "Equipo de Templo Chile en el tatami"
+  antetitulo: "ÑUÑOA · ESCUELA MILITAR"
+  titulo: "Más que un deporte, una forma de vida"
+  bajada: "Jiu Jitsu Brasileño y Artes Marciales Mixtas para principiantes y avanzados. Comunidad, respeto y disciplina en cada clase."
+  boton_principal: "Agenda tu clase de prueba gratis"
+  boton_secundario: "Ver horarios"
+
+wellhub_banner:
+  titulo: "¡Templo tiene convenio con Wellhub!"
+  bajada: "Entrena usando tu plan Wellhub →"
+
+horarios:
+  antetitulo: "01 — HORARIOS Y SEDES"
+  titulo: "Elige tu sede"
+  pestanas_etiqueta: "Elegir sede"
+  mapa_texto: "Ver en mapa"
+  mapa_etiqueta: "Ver ubicación de la sede en Google Maps"
+  # Nombre largo (escritorio) y corto (celular) de cada día y tipo de clase
+  dias:
+    - { id: lun, largo: "LUNES", corto: "LUN" }
+    - { id: mar, largo: "MARTES", corto: "MAR" }
+    - { id: mie, largo: "MIÉRCOLES", corto: "MIÉ" }
+    - { id: jue, largo: "JUEVES", corto: "JUE" }
+    - { id: vie, largo: "VIERNES", corto: "VIE" }
+    - { id: sab, largo: "SÁBADO", corto: "SÁB" }
+  clases:
+    bjj: { largo: "Jiu Jitsu", corto: "BJJ", estilo: bjj }
+    mma: { largo: "MMA", corto: "MMA", estilo: mma }
+    bjj_iniciantes: { largo: "BJJ Iniciantes", corto: "BJJ·I", estilo: iniciantes }
+    mma_iniciantes: { largo: "MMA Iniciantes", corto: "MMA·I", estilo: iniciantes }
+    super: { largo: "Super Entreno", corto: "SUPER", estilo: super }
+  leyenda:
+    - { estilo: bjj, texto: "BJJ · Jiu Jitsu Brasileño" }
+    - { estilo: mma, texto: "MMA · Artes Marciales Mixtas" }
+    - { estilo: iniciantes, texto: "·I · Iniciantes" }
+    - { estilo: super, texto: "Super Entrenamiento" }
+
+precios:
+  antetitulo: "02 — PLANES SEDE ÑUÑOA"
+  titulo: "Mensualidad"
+  # variante: destacado | normal | prueba
+  planes:
+    - variante: destacado
+      etiqueta: "MÁS ELEGIDO"
+      nombre: "3 veces por semana"
+      precio: "$50.000"
+      unidad: "al mes"
+    - variante: normal
+      etiqueta: "PLAN"
+      nombre: "2 veces por semana"
+      precio: "$35.000"
+      unidad: "al mes"
+    - variante: normal
+      etiqueta: "SIN COMPROMISO"
+      nombre: "Clase suelta"
+      precio: "$8.000"
+      unidad: "por clase"
+    - variante: prueba
+      etiqueta: "PRIMERA VEZ"
+      nombre: "Clase de prueba"
+      precio: "Gratis"
+      boton: "Agendar por Instagram"
+  notas:
+    - "* El valor incluye disciplinas a elección."
+    - "** El valor de las clases en Dmoov Escuela Militar corresponde a tu plan ClassPass."
+
+profesor:
+  antetitulo: "03 — CONOCE A TU PROFESOR"
+  nombre: "Felipe Santibañez"
+  foto: "img/profe.jpg"
+  foto_alt: "Felipe Santibañez, profesor de Templo"
+  logros:
+    - "Cinturón negro Jiu Jitsu Brasileño"
+    - "Cinturón negro Kenpo Karate"
+    - "Cinturón negro Kickboxing"
+    - "Peleador profesional de MMA"
+  bio: "Apasionado por el deporte de alto rendimiento, Felipe Santibañez es cinturón negro en Kenpo Karate, Jiu Jitsu Brasileño y Kickboxing, además de peleador profesional de MMA. Como preparador físico y entrenador en activo, combina la exigencia y técnica de la competición para ayudar a personas de todos los niveles a superar sus límites, ganar fuerza y construir una disciplina de hierro."
+
+wellhub:
+  antetitulo: "04 — CONVENIO"
+  # El título se arma como: antes + destacado (en color) + despues
+  titulo_antes: "¡Templo tiene convenio con "
+  titulo_destacado: "Wellhub"
+  titulo_despues: "!"
+  bajada: "Entrena en Templo Jiu Jitsu Culture usando tu plan Wellhub. Busca “Templo” en la app, haz check-in y te esperamos en el tatami."
+  boton: "Ver Templo en Wellhub"
+  # icono: nombre del archivo en src/components/wellhub/iconos/
+  beneficios:
+    - icono: kimono
+      titulo: "Jiu Jitsu para todos"
+      texto: "Principiantes y avanzados"
+    - icono: comunidad
+      titulo: "Comunidad y respeto"
+      texto: "Entrena, aprende y crece con nosotros"
+    - icono: progreso
+      titulo: "Disciplina y bienestar"
+      texto: "Mejora tu cuerpo y tu mente"
+
+galeria:
+  antetitulo: "05 — GALERÍA"
+  titulo: "Vive el Templo"
+  pestanas_etiqueta: "Elegir sede de la galería"
+  anterior: "Foto anterior"
+  siguiente: "Foto siguiente"
+  ver_foto: "Ver foto"
+
+contacto:
+  titulo: "¡Te esperamos!"
+  bajada: "Ven a conocer tu nuevo lugar para entrenar. Escríbenos por Instagram y agenda tu clase de prueba gratis."
+  boton_mensaje: "Enviar mensaje"
+  boton_perfil: "@templo_chile"
+  compartir: "Compartir con amigos"
+  # URL a compartir: reemplazar por la URL final de la landing
+  compartir_url: "https://www.instagram.com/templo_chile/"
+  compartir_texto: "¡Mira Templo Jiu Jitsu Culture Chile! Horarios, precios y clase de prueba gratis."
+
+footer:
+  marca: "TEMPLO · JIU JITSU CULTURE"
+  ubicacion: "Ñuñoa · Escuela Militar · Santiago de Chile"
+  contacto: "Contacto: +569 7677 9705"
+  derechos: "© 2026 Templo Jiu Jitsu Culture Chile"
+  credito_antes: "Sitio desarrollado por "
+  credito_nombre: "Matías Briones"
+  credito_url: "https://www.linkedin.com/in/mat%C3%ADas-ignacio-briones-96241621a/"

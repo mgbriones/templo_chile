@@ -1,0 +1,29 @@
+{#
+  LAYOUT BASE — esqueleto HTML de la página.
+  Contiene el <head> (título, descripción, vista previa para redes, favicon y
+  fuentes de Google) y carga css/styles.css y js/main.js, que se generan
+  juntando los estilos y scripts de todos los componentes (ver src/assets/).
+  El contenido de la página (index.njk) se inserta en {{ content }}.
+-#}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ textos.sitio.titulo }}</title>
+<meta name="description" content="{{ textos.sitio.descripcion }}">
+<meta property="og:title" content="{{ textos.sitio.titulo }}">
+<meta property="og:description" content="{{ textos.sitio.descripcion }}">
+<meta property="og:image" content="{{ textos.sitio.imagen_compartir }}">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="{{ textos.sitio.logo }}">
+<link rel="apple-touch-icon" href="{{ textos.sitio.logo }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Michroma&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+{{ content | safe }}
+<script src="js/main.js"></script>
+</body>
+</html>

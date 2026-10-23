@@ -1,0 +1,78 @@
+{#
+  HORARIOS — sección "Elige tu sede" (#horarios).
+  Pestañas para elegir sede y, por cada sede, un panel con su nombre, comuna,
+  enlace a Google Maps y la grilla semanal de clases (lunes a sábado). Todos
+  los paneles se generan al construir; scripts/pestanas.js muestra solo el de
+  la sede elegida. Debajo va la leyenda de colores por tipo de clase.
+  Datos: sedes.yml (horario de cada sede). Textos, días y tipos de clase:
+  textos.yml > horarios.
+-#}
+{%- set h = textos.horarios -%}
+<section id="horarios" class="seccion">
+  <div class="contenedor horarios">
+    <div class="horarios__encabezado">
+      <div class="encabezado-seccion">
+        <span class="antetitulo">{{ h.antetitulo }}</span>
+        <h2 class="titulo-seccion">{{ h.titulo }}</h2>
+      </div>
+      <div role="group" aria-label="{{ h.pestanas_etiqueta }}" class="pestanas" data-pestanas="horarios">
+        {%- for clave, sede in sedes %}
+        <button type="button" class="pestana" data-sede="{{ clave }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ sede.nombre }}</button>
+        {%- endfor %}
+      </div>
+    </div>
+
+    <div class="horarios__tarjeta">
+      {%- for clave, sede in sedes %}
+      <div class="horarios__panel" data-panel="horarios" data-sede="{{ clave }}"{% if not loop.first %} hidden{% endif %}>
+        <div class="horarios__sede">
+          <div class="horarios__sede-info">
+            <span class="icono-circulo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+            </span>
+            <div class="horarios__sede-textos">
+              <h3 class="horarios__sede-titulo">{{ sede.titulo }}</h3>
+              <span class="horarios__sede-lugar">{{ sede.lugar }}</span>
+            </div>
+          </div>
+          <a class="horarios__mapa" href="{{ sede.mapa }}" target="_blank" rel="noopener" aria-label="{{ h.mapa_etiqueta }}">
+            <svg class="horarios__mapa-miniatura" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#e9e9e9"></rect><path d="M-4 20 L70 34" stroke="#ffffff" stroke-width="7"></path><path d="M22 -4 L30 70" stroke="#ffffff" stroke-width="6"></path><path d="M-4 50 L70 44" stroke="#ffffff" stroke-width="4"></path><path d="M50 -4 L44 70" stroke="#ffffff" stroke-width="4"></path><rect x="34" y="6" width="10" height="10" fill="#d4d4d4"></rect><rect x="6" y="36" width="12" height="8" fill="#d4d4d4"></rect><path d="M32 52s-12-10.5-12-19.5a12 12 0 0 1 24 0C44 41.5 32 52 32 52z" fill="#c93a55" stroke="#0a0a0a" stroke-width="2"></path><circle cx="32" cy="32.5" r="4.5" fill="#ffffff"></circle></svg>
+            <span class="horarios__mapa-texto">
+              <span>{{ h.mapa_texto }}</span>
+            </span>
+            <svg class="horarios__mapa-flecha" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg>
+          </a>
+        </div>
+
+        <div class="horarios__grilla">
+          <div class="horarios__fila">
+            <div></div>
+            {%- for dia in h.dias %}
+            <div class="horarios__dia"><span class="horarios__largo">{{ dia.largo }}</span><span class="horarios__corto">{{ dia.corto }}</span></div>
+            {%- endfor %}
+          </div>
+          {%- for fila in sede.horario %}
+          <div class="horarios__fila">
+            <div class="horarios__hora"><span>{{ fila.inicio }}</span><small>{{ fila.fin }}</small></div>
+            {%- for dia in h.dias %}
+            {%- set clase = h.clases[fila.clases[dia.id]] %}
+            {%- if clase %}
+            <div class="horarios__celda horarios__celda--{{ clase.estilo }}"><span class="horarios__largo">{{ clase.largo }}</span><span class="horarios__corto">{{ clase.corto }}</span></div>
+            {%- else %}
+            <div class="horarios__celda horarios__celda--vacia" aria-hidden="true"></div>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+
+      <div class="horarios__leyenda">
+        {%- for item in h.leyenda %}
+        <span class="horarios__leyenda-item"><span class="horarios__muestra horarios__muestra--{{ item.estilo }}"></span>{{ item.texto }}</span>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>

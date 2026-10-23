@@ -1,0 +1,29 @@
+:root {
+  --color-negro: #0a0a0a;
+  --color-blanco: #ffffff;
+  --color-texto: #111111;
+  --color-acento: #c93a55;
+  --color-acento-oscuro: #8a2338;
+  --color-acento-suave: #fcedf0;
+
+  --gris-900: #161616;
+  --gris-850: #222222;
+  --gris-800: #333333;
+  --gris-750: #3a3a3a;
+  --gris-700: #555555;
+  --gris-650: #5a5a5a;
+  --gris-500: #9a9a9a;
+  --gris-400: #bdbdbd;
+  --gris-350: #c7c7c7;
+  --gris-300: #d9d9d9;
+  --gris-250: #e0e0e0;
+  --gris-200: #e5e5e5;
+  --gris-150: #e6e6e6;
+  --gris-100: #f3f3f3;
+
+  --fuente-texto: Inter, system-ui, sans-serif;
+  --fuente-titulo: Oswald, sans-serif;
+  --fuente-marca: Michroma, sans-serif;
+
+  --ancho-contenido: 1200px;
+}

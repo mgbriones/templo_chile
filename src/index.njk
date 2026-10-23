@@ -1,0 +1,20 @@
+---
+layout: base.njk
+permalink: index.html
+---
+{#
+  PÁGINA PRINCIPAL — arma la landing con el layout base (_layouts/base.njk).
+  Solo define el orden de los componentes: para mover, quitar o agregar una
+  sección basta con editar esta lista. Cada componente vive en
+  src/components/<nombre>/ con su HTML (.njk), su CSS y, si tiene, su JS.
+-#}
+{% include "header/header.njk" %}
+{% include "hero/hero.njk" %}
+{% include "wellhub-banner/wellhub-banner.njk" %}
+{% include "horarios/horarios.njk" %}
+{% include "precios/precios.njk" %}
+{% include "profesor/profesor.njk" %}
+{% include "wellhub/wellhub.njk" %}
+{% include "galeria/galeria.njk" %}
+{% include "contacto/contacto.njk" %}
+{% include "footer/footer.njk" %}

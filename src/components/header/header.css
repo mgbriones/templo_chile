@@ -1,0 +1,19 @@
+.header { position: sticky; top: 0; z-index: 20; background: var(--color-negro); color: var(--color-blanco); border-bottom: 1px solid var(--gris-850); }
+.header__barra { padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+.header__marca { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--color-blanco); flex: 1 1 auto; }
+.header__logo { width: 40px; height: 40px; border-radius: 50%; display: block; }
+.header__nombre { display: flex; flex-direction: column; line-height: 1; }
+.header__titulo { font-family: var(--fuente-marca); font-size: 18px; letter-spacing: 4px; }
+.header__subtitulo { font-family: var(--fuente-marca); font-size: 8px; letter-spacing: 2.5px; color: var(--gris-400); margin-top: 5px; }
+
+.header__nav { display: flex; gap: 22px; justify-content: center; flex: 0 1 auto; font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; white-space: nowrap; }
+.header__nav a { padding: 10px 0; color: var(--gris-150); text-decoration: none; }
+.header__nav a:hover { color: var(--color-blanco); text-decoration: underline; text-underline-offset: 6px; }
+
+/* En pantallas angostas el menú baja a una fila de píldoras con scroll horizontal */
+@media (max-width: 820px) {
+  .header__nav { order: 3; flex-basis: 100%; overflow-x: auto; justify-content: flex-start; gap: 8px; padding: 2px 48px 6px 0; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 56px), transparent 100%); mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 56px), transparent 100%); }
+  .header__nav::-webkit-scrollbar { display: none; }
+  .header__nav a { flex: none; scroll-snap-align: start; padding: 10px 16px; border: 1px solid var(--gris-750); border-radius: 999px; background: var(--gris-900); }
+  .header__nav a:hover { text-decoration: none; }
+}

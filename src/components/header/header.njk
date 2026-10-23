@@ -1,0 +1,23 @@
+{#
+  HEADER — barra superior fija (sticky) en todas las pantallas.
+  Muestra el logo y el nombre de Templo, que llevan al inicio, y el menú con
+  enlaces a cada sección. En celular el menú baja a una fila de píldoras con
+  scroll horizontal (ver header.css).
+  Textos: textos.yml > header.
+-#}
+<header class="header">
+  <div class="contenedor header__barra">
+    <a href="#inicio" class="header__marca">
+      <img src="{{ textos.sitio.logo }}" alt="" class="header__logo">
+      <span class="header__nombre">
+        <span class="header__titulo">{{ textos.header.marca }}</span>
+        <span class="header__subtitulo">{{ textos.header.submarca }}</span>
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="{{ textos.header.nav_etiqueta }}">
+      {%- for item in textos.header.nav %}
+      <a href="{{ item.href }}">{{ item.texto }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>

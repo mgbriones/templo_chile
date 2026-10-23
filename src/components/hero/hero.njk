@@ -1,0 +1,18 @@
+{#
+  HERO — portada de la landing (#inicio).
+  Foto del equipo en blanco y negro de fondo, el lema principal y dos botones:
+  agendar la clase de prueba por mensaje de Instagram y bajar a los horarios.
+  Textos: textos.yml > hero. Enlace de Instagram: textos.yml > enlaces.
+-#}
+<section id="inicio" class="hero">
+  <img src="{{ textos.hero.imagen }}" alt="{{ textos.hero.imagen_alt }}" class="hero__fondo">
+  <div class="contenedor hero__contenido">
+    <span class="hero__antetitulo">{{ textos.hero.antetitulo }}</span>
+    <h1 class="hero__titulo">{{ textos.hero.titulo }}</h1>
+    <p class="hero__bajada">{{ textos.hero.bajada }}</p>
+    <div class="hero__acciones">
+      <a class="boton boton--claro" href="{{ textos.enlaces.instagram_mensaje }}" target="_blank" rel="noopener">{{ textos.hero.boton_principal }}</a>
+      <a class="boton boton--borde" href="#horarios">{{ textos.hero.boton_secundario }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+{#
+  GALERÍA — carrusel de fotos "Vive el Templo" (#galeria).
+  Pestañas para elegir sede, flechas, la tira de fotos de cada sede y sus
+  puntos de navegación. Se generan las tiras de todas las sedes;
+  scripts/pestanas.js muestra la elegida y galeria.js mueve el carrusel
+  (avance automático, flechas, puntos y swipe en celular).
+  Fotos y su encuadre: sedes.yml > <sede>.fotos. Textos: textos.yml > galeria.
+-#}
+{%- set g = textos.galeria -%}
+<section id="galeria" class="seccion">
+  <div class="contenedor galeria">
+    <div class="galeria__encabezado">
+      <div class="encabezado-seccion">
+        <span class="antetitulo">{{ g.antetitulo }}</span>
+        <h2 class="titulo-seccion">{{ g.titulo }}</h2>
+      </div>
+      <div class="galeria__controles">
+        <div role="group" aria-label="{{ g.pestanas_etiqueta }}" class="pestanas pestanas--chicas" data-pestanas="galeria">
+          {%- for clave, sede in sedes %}
+          <button type="button" class="pestana" data-sede="{{ clave }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ sede.nombre }}</button>
+          {%- endfor %}
+        </div>
+        <div class="galeria__flechas">
+          <button type="button" class="galeria__flecha" data-galeria-paso="-1" aria-label="{{ g.anterior }}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+          </button>
+          <button type="button" class="galeria__flecha galeria__flecha--siguiente" data-galeria-paso="1" aria-label="{{ g.siguiente }}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="galeria__visor">
+      {%- for clave, sede in sedes %}
+      <div class="galeria__pista" data-panel="galeria" data-sede="{{ clave }}"{% if not loop.first %} hidden{% endif %}>
+        {%- for foto in sede.fotos %}
+        <div class="galeria__foto"><img src="{{ foto.src }}" alt="{{ foto.alt }}" loading="lazy" style="object-position: {{ foto.pos }}"></div>
+        {%- endfor %}
+      </div>
+      {%- endfor %}
+    </div>
+    {%- for clave, sede in sedes %}
+    <div class="galeria__puntos" data-panel="galeria" data-sede="{{ clave }}"{% if not loop.first %} hidden{% endif %}>
+      {%- for foto in sede.fotos %}
+      <button type="button" class="galeria__punto" data-punto="{{ loop.index0 }}" aria-label="{{ g.ver_foto }} {{ loop.index }}" aria-current="{{ 'true' if loop.first else 'false' }}"><span></span></button>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>

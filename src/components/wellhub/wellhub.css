@@ -1,0 +1,13 @@
+.wellhub { background: var(--color-acento-suave); }
+.wellhub__contenido { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+.wellhub__texto { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.wellhub__antetitulo { color: var(--color-acento-oscuro); }
+.wellhub__titulo { color: var(--color-negro); }
+.wellhub__titulo span { color: var(--color-acento); }
+.wellhub__bajada { margin: 0; font-size: 18px; line-height: 1.55; color: var(--gris-800); max-width: 36rem; }
+.wellhub__acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+
+.wellhub__beneficios { flex: 1 1 320px; min-width: 0; display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 12px; }
+.wellhub__beneficio { background: var(--color-blanco); border-radius: 6px; padding: 18px 20px; display: flex; gap: 14px; align-items: center; }
+.wellhub__beneficio-titulo { font-weight: 700; }
+.wellhub__beneficio-texto { color: var(--gris-700); font-size: 14px; }

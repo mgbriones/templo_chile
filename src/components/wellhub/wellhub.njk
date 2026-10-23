@@ -1,0 +1,28 @@
+{#
+  WELLHUB — detalle del convenio con Wellhub (#wellhub).
+  Título con "Wellhub" destacado en color, explicación de cómo usar el plan,
+  botón a la ficha de Templo en Wellhub y tarjetas de beneficios. El ícono de
+  cada beneficio se carga desde wellhub/iconos/<icono>.svg.
+  Textos: textos.yml > wellhub. Enlace: textos.yml > enlaces.
+-#}
+{%- set w = textos.wellhub -%}
+<section id="wellhub" class="seccion wellhub">
+  <div class="contenedor wellhub__contenido">
+    <div class="wellhub__texto">
+      <span class="antetitulo wellhub__antetitulo">{{ w.antetitulo }}</span>
+      <h2 class="titulo-seccion wellhub__titulo">{{ w.titulo_antes }}<span>{{ w.titulo_destacado }}</span>{{ w.titulo_despues }}</h2>
+      <p class="wellhub__bajada">{{ w.bajada }}</p>
+      <div class="wellhub__acciones">
+        <a class="boton boton--acento" href="{{ textos.enlaces.wellhub }}" target="_blank" rel="noopener">{{ w.boton }}</a>
+      </div>
+    </div>
+    <div class="wellhub__beneficios">
+      {%- for beneficio in w.beneficios %}
+      <div class="wellhub__beneficio">
+        <span class="icono-circulo">{% include "wellhub/iconos/" + beneficio.icono + ".svg" %}</span>
+        <div><div class="wellhub__beneficio-titulo">{{ beneficio.titulo }}</div><div class="wellhub__beneficio-texto">{{ beneficio.texto }}</div></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

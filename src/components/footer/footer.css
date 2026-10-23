@@ -1,0 +1,7 @@
+.footer { background: var(--color-negro); color: var(--gris-400); border-top: 1px solid var(--gris-850); }
+.footer__principal { padding: 24px 20px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 13px; }
+.footer__marca { font-family: var(--fuente-marca); letter-spacing: 2px; color: var(--color-blanco); }
+.footer__legal { border-top: 1px solid var(--gris-850); }
+.footer__legal-contenido { padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 12px; color: var(--gris-500); }
+.footer__credito { color: var(--gris-300); text-decoration: underline; text-underline-offset: 3px; }
+.footer__credito:hover { color: var(--color-blanco); }

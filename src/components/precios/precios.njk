@@ -1,0 +1,39 @@
+{#
+  PRECIOS — mensualidades de la sede Ñuñoa (#precios).
+  Una tarjeta por plan; la variante (destacado, normal o prueba) define su
+  estilo. El plan que tiene "boton" muestra el enlace para agendar por
+  Instagram. Al final van las notas al pie.
+  Textos: textos.yml > precios.
+-#}
+{%- set p = textos.precios -%}
+<section id="precios" class="seccion seccion--oscura">
+  <div class="contenedor precios">
+    <div class="encabezado-seccion">
+      <span class="antetitulo">{{ p.antetitulo }}</span>
+      <h2 class="titulo-seccion">{{ p.titulo }}</h2>
+    </div>
+    <div class="precios__planes">
+      {%- for plan in p.planes %}
+      <div class="precios__plan precios__plan--{{ plan.variante }}">
+        <span class="precios__etiqueta">{{ plan.etiqueta }}</span>
+        <span class="precios__nombre">{{ plan.nombre }}</span>
+        <span class="precios__precio">{{ plan.precio }}</span>
+        {%- if plan.unidad %}
+        <span class="precios__unidad">{{ plan.unidad }}</span>
+        {%- endif %}
+        {%- if plan.boton %}
+        <a class="precios__boton" href="{{ textos.enlaces.instagram_mensaje }}" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8"></circle></svg>
+          {{ plan.boton }}
+        </a>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="precios__notas">
+      {%- for nota in p.notas %}
+      <span>{{ nota }}</span>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

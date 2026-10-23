@@ -1,0 +1,7 @@
+.profesor { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+.profesor__foto { flex: 1 1 300px; min-width: 0; max-width: 460px; }
+.profesor__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block; border-radius: 6px; }
+.profesor__texto { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.profesor__logros { display: flex; flex-wrap: wrap; gap: 8px; }
+.profesor__logro { border: 1px solid var(--gris-650); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; }
+.profesor__bio { margin: 0; font-size: 18px; line-height: 1.65; color: var(--gris-250); max-width: 40rem; }
